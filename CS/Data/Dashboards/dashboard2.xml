@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard>
+  <Title Text="Dashboard 2" />
+  <DataSources>
+    <ObjectDataSource Name="ObjectDataSource" ComponentName="objectDataSource1" DataId="odsSales">
+      <DataSource Type="ProductSales, WebDashboardSendEmail, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+      <DataMember>GetProductSales</DataMember>
+    </ObjectDataSource>
+  </DataSources>
+  <Items>
+    <Chart ComponentName="chartDashboardItem1" Name="Chart 1" DataSource="objectDataSource1">
+      <DataItems>
+        <Dimension DataMember="OrderDate" DefaultId="DataItem0" />
+        <Measure DataMember="Sales" DefaultId="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument DefaultId="DataItem0" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple>
+              <Value DefaultId="DataItem1" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <ComboBox ComponentName="comboBoxDashboardItem1" Name="Combo Box 1" DataSource="objectDataSource1">
+      <DataItems>
+        <Dimension DataMember="Category" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ComboBox>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup>
+      <LayoutGroup Orientation="Vertical">
+        <LayoutItem DashboardItem="comboBoxDashboardItem1" />
+        <LayoutItem DashboardItem="chartDashboardItem1" />
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>
