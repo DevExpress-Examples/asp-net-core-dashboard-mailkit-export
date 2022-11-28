@@ -16,7 +16,7 @@ On the server side, the **IndexModel.OnPostEmail** method is called to accept th
 > [!Note]
 >  The test [Ethereal Email](https://ethereal.email/) SMTP server is used in this example. You can replace the authentication parameters passed to the **SmtpClient.Connect** and **SmtpClient.Authenticate** methods with parameters that correspond to your email server.
 
-## Files to Look at
+## Files to Review
 
 * [DashboardConfig.cs](./CS/Program.cs)
 * [Index.cshtml](./CS/Pages/Index.cshtml)
