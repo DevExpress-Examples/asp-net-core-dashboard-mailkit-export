@@ -13,7 +13,7 @@ Handle the [ViewerApiExtension.onDashboardTitleToolbarUpdated](https://docs.deve
 
 On the server side, the **IndexModel.OnPostEmail** method is called to accept the callback and its parameters. The [DashboardExporter](https://docs.devexpress.com/Dashboard/DevExpress.DashboardCommon.DashboardExporter) class instance exports a corresponding  dashboard to a PDF document and sends it as an attachment along with the **MimeMessage** object from the [MailKit](https://github.com/jstedfast/MailKit) library.
 
-> [!Note]
+> **Note**:
 >  The test [Ethereal Email](https://ethereal.email/) SMTP server is used in this example. You can replace the authentication parameters passed to the **SmtpClient.Connect** and **SmtpClient.Authenticate** methods with parameters that correspond to your email server.
 
 ## Files to Review
