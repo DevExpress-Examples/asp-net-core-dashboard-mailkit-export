@@ -46,6 +46,7 @@ builder.Services.AddScoped<DashboardConfigurator>((IServiceProvider serviceProvi
     return configurator;
 });
 
+DevExpress.Utils.DeserializationSettings.RegisterTrustedClass(typeof(ProductSales));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -59,7 +60,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseDevExpressControls();
-EndpointRouteBuilderExtension.MapDashboardRoute(app, "api/dashboard", "DefaultDashboard");
+app.MapDashboardRoute("api/dashboard", "DefaultDashboard");
 
 app.UseRouting();
 app.UseAuthorization();
